@@ -1,6 +1,6 @@
-## Getting and Cleaning Data Project
+## Exploratory Data - Plotting
 ## Chris Croupe
-## 02//2019
+## 02/23/2019
 
 library(tidyverse)
 library(plyr)
