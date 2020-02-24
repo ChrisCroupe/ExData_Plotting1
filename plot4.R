@@ -20,7 +20,7 @@ if (!file.exists("household_power_consumption.")) {
 ## 1
 ## Read the required data sets into the environment
 ## Data files
-test_data <- read.delim("household_power_consumption.txt", sep = ";")
+test_data <- read.delim("household_power_consumption.txt", sep = ";", stringsAsFactors = FALSE)
 ## Convert Date column to Date class
 test_data <- mutate(test_data, Date = as.Date(Date, format = "%d/%m/%Y"))
 
@@ -39,7 +39,7 @@ reduced_data <- mutate(reduced_data, "Date_Time" = ymd(Date) + hms(Time))
 ## set up plot grid
 par(mfcol = c(2,2))
 ## Top-left plot (same as plot 2)
-plot(reduced_data$Date_Time, as.numeric(reduced_data$Global_active_power)/500, 
+plot(reduced_data$Date_Time, as.numeric(reduced_data$Global_active_power), 
      type = "l", ylab = "Global Active Power", xlab = "")
 
 ## Bottom-left plot (same as plot  3)

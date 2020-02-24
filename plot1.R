@@ -1,6 +1,6 @@
-## Exploratory Data - Plotting
+## Getting and Cleaning Data Project
 ## Chris Croupe
-## 02/23/2019
+## 02//2019
 
 library(tidyverse)
 library(plyr)
@@ -20,7 +20,7 @@ if (!file.exists("household_power_consumption.")) {
 ## 1
 ## Read the required data sets into the environment
 ## Data files
-test_data <- read.delim("household_power_consumption.txt", sep = ";")
+test_data <- read.delim("household_power_consumption.txt", sep = ";", stringsAsFactors = FALSE)
 ## Convert Date column to Date class
 test_data <- mutate(test_data, Date = as.Date(Date, format = "%d/%m/%Y"))
 
@@ -36,7 +36,7 @@ rm(test_data, dates, Date1, Date2, filename, url)
 reduced_data <- mutate(reduced_data, Time = hms(Time))
 
 ## Plot 1
-hist(as.numeric(reduced_data$Global_active_power)/500, col = "red", 
+hist(as.numeric(reduced_data$Global_active_power), col = "red", 
      main = "Global Active Power", 
      xlab = "Global Active Power (kilowatts)")
 dev.copy(png, file = "Plot1.png")

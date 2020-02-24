@@ -1,6 +1,6 @@
-## Exploratory Data - Plotting
+## Getting and Cleaning Data Project
 ## Chris Croupe
-## 02/23/2019
+## 02//2019
 
 library(tidyverse)
 library(plyr)
@@ -20,7 +20,7 @@ if (!file.exists("household_power_consumption.")) {
 ## 1
 ## Read the required data sets into the environment
 ## Data files
-test_data <- read.delim("household_power_consumption.txt", sep = ";")
+test_data <- read.delim("household_power_consumption.txt", sep = ";", stringsAsFactors = FALSE)
 ## Convert Date column to Date class
 test_data <- mutate(test_data, Date = as.Date(Date, format = "%d/%m/%Y"))
 
